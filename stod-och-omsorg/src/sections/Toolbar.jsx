@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { FaRegMap } from "react-icons/fa";
 import { GoBook } from "react-icons/go";
-import { GrContactInfo } from "react-icons/gr";
+import { BsTelephoneOutboundFill } from "react-icons/bs";
 import { HiOutlineGlobeEuropeAfrica } from "react-icons/hi2";
 import { MdHearing } from "react-icons/md";
 
@@ -11,7 +11,7 @@ const Toolbar = () => {
     <ToolbarContainer>
       <Links>
         <Link>
-          <GrContactInfo /> Kontakt
+          <BsTelephoneOutboundFill /> Kontakt
         </Link>
         <Link>
           <GoBook /> Lättläst
@@ -37,6 +37,21 @@ const ToolbarContainer = styled.div`
   gap: 2rem;
   background: lightblue;
   height: 2.3rem;
+  @media (max-width: 1300px) {
+    font-size: 100%;
+    height: 2.9rem;
+  }
+  @media (max-width: 900px) {
+    font-size: 1.2rem;
+
+    height: 2.9rem;
+  }
+  @media (max-width: 750px) {
+    font-size: 1.2rem;
+
+    height: 10vh;
+    flex-wrap: wrap;
+  }
 `;
 const Links = styled.ul`
   display: flex;
@@ -45,7 +60,11 @@ const Links = styled.ul`
   margin: auto;
   justify-content: flex-end;
   gap: 2rem;
-  font-size: 0.8rem;
+  @media (max-width: 750px) {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 2rem;
+  }
 `;
 const Link = styled.a`
   display: flex;

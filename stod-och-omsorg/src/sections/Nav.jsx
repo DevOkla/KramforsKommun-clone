@@ -33,14 +33,28 @@ const Nav = () => {
 export const NavContainer = styled.div`
   margin: auto;
   width: 80%;
+  @media (max-width: 900px) {
+    width: 90%;
+  }
 `;
 export const Top = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  @media (max-width: 1150px) {
+    display: flex;
+    flex-direction: column;
+  }
+  @media (max-width: 650px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
 `;
 export const Logo = styled.div`
   min-width: 20rem;
+  margin: 1rem 0;
 `;
 export const Img = styled.img`
   user-drag: none;
@@ -54,6 +68,15 @@ export const Img = styled.img`
 export const Search = styled.div`
   display: flex;
   margin: 2rem 4rem;
+  @media (max-width: 1150px) {
+    align-self: flex-end;
+  }
+  @media (max-width: 650px) {
+    margin: 2rem 0;
+
+    align-self: flex-start;
+    justify-self: flex-start;
+  }
 `;
 export const InputContainer = styled.div`
   display: flex;
@@ -84,25 +107,42 @@ export const Button = styled(FcSearch)`
 export const NavBarContainer = styled.div``;
 export const Links = styled.div`
   display: flex;
-
   font-size: 1.6rem;
-  text-align: center;
-  font-weight: bold;
 
-  padding: 2rem 1rem;
+  font-weight: bold;
+  @media (max-width: 1150px) {
+    font-size: 1.4rem;
+  }
+  @media (max-width: 1150px) {
+    font-size: 1.4rem;
+    flex-wrap: wrap;
+  }
 `;
 export const Link = styled.a`
   cursor: pointer;
-  background: #0098d3;
+  background: #004f71;
+  color: white;
   transition: 0.3s;
-  padding: 1rem 2rem;
-  width: 16%;
+  padding: 1rem 0.5rem;
+  min-width: 16%;
   display: flex;
   align-items: center;
+  text-align: center;
+  justify-content: center;
   &:hover {
-    color: white;
-    background: #054f6c;
+    background: #add8e6;
     transition: 0.3s;
+    color: black;
+  }
+  @media (max-width: 1150px) {
+    margin: 1rem;
+    min-width: 45%;
+    padding: 1rem 1rem;
+  }
+  @media (max-width: 630px) {
+    min-width: 100%;
+    height: 4rem;
+    margin: 0.5rem;
   }
 `;
 export default Nav;
